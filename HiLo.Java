@@ -7,10 +7,15 @@ public class Main {
 		int theNumber = (int)(Math.random() * 100 +1);
 		// System.out.print( theNumber );
 		int guess = 0;
-		System.out.println("Guess a number between 1 and 100:");
-		guess = scan.nextInt();
-		System.out.print("You entered " + guess + ".");
-			
-		}
-	
+		while (guess != theNumber) {
+			System.out.println("Guess a number between 1 and 100:");
+			guess = scan.nextInt();
+			if (guess < theNumber)
+				System.out.print(guess + " is too low. Try again.");
+			else if (guess > theNumber )
+				System.out.println(guess + " is too high.try again.");
+			else
+				System.out.println(guess + " is correct. You win!");
+		}	// End of while loop for guessing.
+	}
 }
